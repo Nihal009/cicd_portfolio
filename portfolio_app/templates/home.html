@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Nihal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
+            scroll-margin-top: 4rem;
+        }
+    
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.active {
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-800/80 backdrop-blur-sm shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold text-blue-400">Mn</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#bio" class="hover:text-blue-400 transition-colors">Bio</a></li>
+                        <li><a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a></li>
+                        <li><a href="#certifications" class="hover:text-blue-400 transition-colors">Certifications</a></li>
+                        <li><a href="#connect" class="hover:text-blue-400 transition-colors">Connect</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <ul class="px-2 pt-2 pb-3 space-y-1">
+                    <li><a href="#bio" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Bio</a></li>
+                    <li><a href="#experience" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Experience</a></li>
+                    <li><a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Projects</a></li>
+                    <li><a href="#skills" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Skills</a></li>
+                    <li><a href="#certifications" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Certifications</a></li>
+                    <li><a href="#connect" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">Connect</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 md:px-6">
+        <!-- Bio Section -->
+        <section id="bio" class="fade-in">
+            <div class="max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Mohammed Nihal</h1>
+                <p class="text-lg md:text-xl text-gray-300">Backend Developer & Devops Enthusiast.</p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</h2>
+            <div class="space-y-8 max-w-3xl mx-auto">
+                <!-- <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <h3 class="text-xl font-semibold text-blue-400">Senior Developer @ Tech Corp</h3>
+                    <p class="text-gray-400">2020 - Present</p>
+                    <p class="mt-4 text-gray-300">Led development of multiple full-stack applications and mentored junior developers.</p>
+                </div> -->
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <h3 class="text-xl font-semibold text-blue-400">Full Stack Developer Intern @ EyeQDotNet</h3>
+                    <p class="text-gray-400">Oct 2024 - Jan 2025</p>
+                    <p class="mt-4 text-gray-300">Developed and maintained multiple client projects using modern web technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</h2>
+            <div class="scroll-container flex overflow-x-auto space-x-6 pb-4 px-4">
+                <div class="flex-shrink-0 w-80 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <img src="/api/placeholder/300/200" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Project 1</h3>
+                        <p class="text-gray-300 mb-4">A full-stack web application built with modern technologies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">React</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">Node.js</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo →</a>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-80 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <img src="/api/placeholder/300/200" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Project 2</h3>
+                        <p class="text-gray-300 mb-4">Mobile-first responsive design system.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">HTML</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-80 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <img src="/api/placeholder/300/200" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Project 3</h3>
+                        <p class="text-gray-300 mb-4">E-commerce platform with payment integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">React</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded-full text-sm text-gray-300">Stripe</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Live Demo →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <span class="text-2xl">⚛️</span>
+                    <span class="font-medium text-gray-300">React</span>
+                </div>
+                <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <span class="text-2xl">𝙅𝙎</span>
+                    <span class="font-medium text-gray-300">JavaScript</span>
+                </div>
+                <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <span class="text-2xl">🟢</span>
+                    <span class="font-medium text-gray-300">Node.js</span>
+                </div>
+                <div class="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <span class="text-2xl">🐍</span>
+                    <span class="font-medium text-gray-300">Python</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Certifications</h2>
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <h3 class="text-xl font-semibold text-blue-400">AWS Solutions Architect</h3>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <h3 class="text-xl font-semibold text-blue-400">Google Cloud Professional</h3>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
+                    <h3 class="text-xl font-semibold text-blue-400">MongoDB Developer</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect" class="fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let's Connect</h2>
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
