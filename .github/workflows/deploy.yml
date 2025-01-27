@@ -1,0 +1,41 @@
+name: Deploy to GCP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: 'latest'
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Authenticate Docker
+        run: gcloud auth configure-docker --quiet
+
+      
+      - name: Build Docker image
+        run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/django-app:latest .
+
+      
+      - name: Push Docker image to GCR
+        run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/django-app:latest
+
+      
+      - name: Deploy to Compute Engine
+        run: |
+          gcloud compute instances create-with-container django-instance \
+            --container-image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/django-app:latest \
+            --zone=${{ secrets.GCP_ZONE }} \
+            --tags=http-server,https-server \
+            --quiet
